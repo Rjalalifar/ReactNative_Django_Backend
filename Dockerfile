@@ -24,3 +24,4 @@ COPY ./app /app
 RUN adduser -D user
 USER user
 
+EXPOSE 8000
