@@ -16,11 +16,14 @@ RUN pip install Django
 RUN pip install djangorestframework
 RUN pip install flake8
 RUN pip install psycopg2
+RUN pip install djangorestframework-simplejwt
+RUN pip install Pillow
+RUN pip install django-cors-headers
 
 
-RUN mkdir /app
-WORKDIR /app 
-COPY ./app /app
+RUN mkdir /backend
+WORKDIR /backend 
+COPY ./backend /backend
 RUN adduser -D user
 USER user
 

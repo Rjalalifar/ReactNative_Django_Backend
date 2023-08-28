@@ -8,13 +8,13 @@ services:
       - "8000:8000"
 
     volumes:
-      - ./app:/app
+      - ./backend:/backend
     
     command: sh -c "python manage.py runserver 0.0.0.0:8000" 
 
     environment:
       - DB_HOST=db
-      - DB_NAME=app
+      - DB_NAME=postgres
       - DB_USER=postgres
       - DB_PASS=12546
     depends_on:
@@ -23,6 +23,6 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_DB=app
+      - POSTGRES_DB=backend
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=12546
